@@ -17,8 +17,12 @@
 		    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
 		    maxZoom: 18
 		}).addTo(map);
-		var latlngs = L.latLng()
-		var polyline = L.polyline(${gpsList}, {color: 'red'}).addTo(map);
+		var latlngs = [];
+		<g:each in="${gpsList}" var="gps">
+		latlngs.push(L.latLng(${gps.latitude}, ${gps.longitude}));
+		</g:each>
+		var polyline = L.polyline(latlngs, {color: 'red'}).addTo(map);
+		
 	</script>
 
 </body>
