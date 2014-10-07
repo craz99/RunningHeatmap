@@ -15,7 +15,7 @@ class HelloController {
 		feature['properties'] = properties
 		def result = [:]
 		result['type'] = "LineString"
-		
+		// Another change just cause
 		def coords = []
 		(1..2).each { i ->
 		  (1..2).each { j ->
