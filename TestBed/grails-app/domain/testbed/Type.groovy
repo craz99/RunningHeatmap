@@ -1,0 +1,5 @@
+package testbed
+
+class Type {
+
+}
